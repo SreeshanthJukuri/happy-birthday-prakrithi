@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Georgia", serif;
+    background: linear-gradient(135deg,#ffb6c1,#ffc0cb,#ffd6e7);
+    min-height:100vh;
+    overflow-x:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    max-width:850px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 8px 30px rgba(0,0,0,0.15);
+    z-index:2;
+}
+
+h1{
+    color:#d63384;
+    margin-bottom:25px;
+    font-size:2.5rem;
+}
+
+.poem{
+    color:#5a2a4f;
+    line-height:1.9;
+    font-size:1.15rem;
+    white-space:pre-line;
+}
+
+button{
+    margin-top:35px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff4f8b;
+    color:white;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff2e74;
+}
+
+#proposal{
+    margin-top:25px;
+    font-size:1.6rem;
+    color:#d63384;
+    font-weight:bold;
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    color:#ff4f8b;
+    animation:float linear infinite;
+    opacity:0.7;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:0.8;
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Birthday ❤️</h1>
+
+    <div class="poem">
+My friend introduced me to you one random day,
+What felt like a small moment slowly chose to stay.
+But then I heard your story, the things you've been through,
+And all I could think was how unfair life was to you.
+
+I saw the hurt you carried, the fear left behind,
+And wished someone had treated your heart a little more kind.
+So I stayed, I listened, I said what was true,
+That you deserve a love that feels safe for you.
+
+Your brown skin shines softly like the evening sky,
+Your beautiful brown eyes always catch my eye.
+Your dimples appear and suddenly I smile too,
+And that little nose piercing somehow suits you.
+
+What started as flirting became something more,
+A feeling much deeper than I expected before.
+Because the more that I knew you, the more I could see,
+That you're not just beautiful, you mean something to me.
+
+You make me want to reassure, protect, and care,
+To remind you that not everyone will disappear.
+And if there's one thing I hope you'll always know,
+It's that you're worth much more than you've been shown.
+
+So when I think of you, it's never just your face,
+It's your strength, your heart, and your quiet grace.
+A girl with brown eyes, dimples, and a nose ring too,
+Who slowly turned a simple crush into something true.
+    </div>
+
+    <button onclick="showProposal()">
+        Click Here 🎀
+    </button>
+
+    <div id="proposal">
+        I love you so much ❤️<br><br>
+        Will you be my girlfriend? 🌹
+    </div>
+</div>
+
+<script>
+function showProposal(){
+    document.getElementById("proposal").style.display = "block";
+}
+
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (15 + Math.random()*25) + "px";
+    heart.style.animationDuration = (4 + Math.random()*5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
